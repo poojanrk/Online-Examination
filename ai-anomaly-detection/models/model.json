@@ -1,0 +1,64 @@
+{
+    "modelTopology": {
+      "class_name": "Sequential",
+      "config": {
+        "layers": [
+          {
+            "class_name": "Dense",
+            "config": {
+              "units": 32,
+              "activation": "relu",
+              "kernel_initializer": "glorotUniform",
+              "name": "dense_1",
+              "batch_input_shape": [null, 1]
+            }
+          },
+          {
+            "class_name": "Dense",
+            "config": {
+              "units": 1,
+              "activation": "sigmoid",
+              "kernel_initializer": "glorotUniform",
+              "name": "dense_2"
+            }
+          }
+        ]
+      }
+    },
+    "trainingConfig": {
+      "optimizer": {
+        "class_name": "SGD",
+        "config": {
+          "learning_rate": 0.01
+        }
+      },
+      "loss": "binaryCrossentropy",
+      "metrics": ["accuracy"]
+    },
+    "weightsManifest": {
+      "paths": ["model.weights.bin"],
+      "weights": [
+        {
+          "name": "dense_1/kernel",
+          "shape": [1, 32],
+          "dtype": "float32"
+        },
+        {
+          "name": "dense_1/bias",
+          "shape": [32],
+          "dtype": "float32"
+        },
+        {
+          "name": "dense_2/kernel",
+          "shape": [32, 1],
+          "dtype": "float32"
+        },
+        {
+          "name": "dense_2/bias",
+          "shape": [1],
+          "dtype": "float32"
+        }
+      ]
+    }
+  }
+  
